@@ -9,8 +9,10 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
   <link rel="stylesheet" href="static/css/custom.css">
 
+  <!-- MathJax -->
   <script>
     MathJax = {
       tex: {
@@ -20,9 +22,12 @@
       }
     };
   </script>
-  <script id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js">
-  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+
+  <!-- marked.js for Markdown → HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+  <!-- highlight.js for code blocks (Lean, Python, etc.) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 </head>
 <body>
 
@@ -112,14 +117,12 @@
           <p>
             The school covers the mathematical and scientific underpinnings of AI alignment,
             including agent foundations, scalable oversight, singular learning theory, and
-            formal verification with Lean. The two-week programme begins with the foundations
-            of AI alignment (Week&nbsp;1) and transitions to deep learning theory and
-            singular learning theory (Week&nbsp;2).
+            formal verification with Lean. Week&nbsp;1 focuses on the foundations of AI alignment;
+            Week&nbsp;2 on deep learning theory and singular learning theory.
           </p>
           <p>
-            Notes are written in Markdown with LaTeX for mathematics.
-            Code and tutorials are in Jupyter notebooks.
-            All material is provisional and will be updated as the school progresses.
+            Notes are written in Markdown with LaTeX mathematics and loaded live from the
+            repository. Click any lecture below to expand its notes.
           </p>
         </div>
       </div>
@@ -133,59 +136,47 @@
     <h2 class="title is-3 has-text-centered">Programme</h2>
     <p class="has-text-centered has-text-grey is-size-6 mb-5">Provisional. All sessions in Rooms 128&ndash;129, SISSA.</p>
 
-    <!-- Week 1 -->
     <h3 class="title is-4">Week 1 &mdash; Foundations of AI Alignment (Nov 16&ndash;20)</h3>
     <div class="table-container">
       <table class="table is-striped is-hoverable is-fullwidth schedule-table">
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Session</th>
-            <th>Speaker</th>
-            <th class="has-text-centered">Notes</th>
+            <th>Date</th><th>Time</th><th>Session</th><th>Speaker</th>
+            <th class="has-text-centered" title="Jump to notes">Notes</th>
           </tr>
         </thead>
         <tbody>
-          <!-- Day 1 -->
           <tr>
             <td class="day-cell" rowspan="3"><strong>Mon 16</strong></td>
             <td>8:30&ndash;10:00</td>
             <td>Lecture 1.1: Why is AI dangerous?</td>
             <td>Aden Power</td>
-            <td class="has-text-centered">
-              <a href="https://github.com/CristopherErazo/sissa-ai-safety-school-2026/blob/main/lectures/notes/week1-day1-lecture1-why-ai-dangerous.md"
-                 target="_blank" title="View notes"><i class="fas fa-file-alt"></i></a>
-            </td>
+            <td class="has-text-centered"><a href="#note-1-1" class="note-jump" title="Go to notes"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>10:30&ndash;12:00</td>
             <td>Lecture 1.2: AI Alignment as a mathematical and scientific problem</td>
             <td>Aden Power</td>
-            <td class="has-text-centered">
-              <a href="https://github.com/CristopherErazo/sissa-ai-safety-school-2026/blob/main/lectures/notes/week1-day1-lecture2-alignment-math-problem.md"
-                 target="_blank" title="View notes"><i class="fas fa-file-alt"></i></a>
-            </td>
+            <td class="has-text-centered"><a href="#note-1-2" class="note-jump" title="Go to notes"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>13:00&ndash;13:45</td>
-            <td class="is-italic has-text-grey-dark">Problem Lab &mdash; introduction</td>
+            <td class="is-italic">Problem Lab &mdash; introduction</td>
             <td>Se Eun Choi, Marc Truter</td>
             <td class="has-text-centered has-text-grey">&mdash;</td>
           </tr>
-          <!-- Day 2 -->
           <tr>
             <td class="day-cell" rowspan="4"><strong>Tue 17</strong></td>
             <td>8:30&ndash;10:00</td>
             <td>Lecture 2.1: How do AI labs align their AIs and are they undoing the progress?</td>
             <td>Aden Power</td>
-            <td class="has-text-centered has-text-grey">&mdash;</td>
+            <td class="has-text-centered"><a href="#note-2-1" class="note-jump"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>10:30&ndash;12:00</td>
             <td>Lecture 2.2: Can we control misaligned AIs?</td>
             <td>Aden Power</td>
-            <td class="has-text-centered has-text-grey">&mdash;</td>
+            <td class="has-text-centered"><a href="#note-2-2" class="note-jump"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>13:00&ndash;14:00</td>
@@ -195,23 +186,22 @@
           </tr>
           <tr>
             <td>14:15&ndash;15:30</td>
-            <td class="is-italic has-text-grey-dark">Problem Lab: LLMs and transformers</td>
+            <td class="is-italic">Problem Lab: LLMs and transformers</td>
             <td>Alessandro Tamai</td>
             <td class="has-text-centered has-text-grey">&mdash;</td>
           </tr>
-          <!-- Day 3 -->
           <tr>
             <td class="day-cell" rowspan="4"><strong>Wed 18</strong></td>
             <td>8:30&ndash;10:00</td>
             <td>Lecture 3.1: Introduction to scalable oversight and debate</td>
             <td>Aden Power</td>
-            <td class="has-text-centered has-text-grey">&mdash;</td>
+            <td class="has-text-centered"><a href="#note-3-1" class="note-jump"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>10:30&ndash;12:00</td>
             <td>Lecture 3.2: Locally Consistent Arguments, Cross-Examination and obfuscated arguments</td>
             <td>Aden Power</td>
-            <td class="has-text-centered has-text-grey">&mdash;</td>
+            <td class="has-text-centered"><a href="#note-3-2" class="note-jump"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>13:30&ndash;14:30</td>
@@ -225,55 +215,53 @@
             <td>Massimiliano Esposito</td>
             <td class="has-text-centered has-text-grey">&mdash;</td>
           </tr>
-          <!-- Day 4 -->
           <tr>
             <td class="day-cell" rowspan="4"><strong>Thu 19</strong></td>
             <td>8:30&ndash;10:00</td>
             <td>Lecture 4.1: Introduction to agent foundations</td>
             <td>Aden Power</td>
-            <td class="has-text-centered has-text-grey">&mdash;</td>
+            <td class="has-text-centered"><a href="#note-4-1" class="note-jump"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>10:30&ndash;12:00</td>
             <td>Lecture 4.2: Multi-agent systems and open source game theory</td>
             <td>Aden Power</td>
-            <td class="has-text-centered has-text-grey">&mdash;</td>
+            <td class="has-text-centered"><a href="#note-4-2" class="note-jump"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>13:00&ndash;15:00</td>
-            <td class="is-italic has-text-grey-dark">Lean Part I: Getting started, installation and basics</td>
+            <td class="is-italic">Lean Part I: Getting started, installation and basics</td>
             <td>Paul Lezeau</td>
             <td class="has-text-centered has-text-grey">&mdash;</td>
           </tr>
           <tr>
             <td>15:00&ndash;16:00</td>
-            <td class="is-italic has-text-grey-dark">Lean Part II: Guided exercises</td>
+            <td class="is-italic">Lean Part II: Guided exercises</td>
             <td>Paul Lezeau</td>
             <td class="has-text-centered has-text-grey">&mdash;</td>
           </tr>
-          <!-- Day 5 -->
           <tr>
             <td class="day-cell" rowspan="4"><strong>Fri 20</strong></td>
             <td>8:30&ndash;10:00</td>
             <td>Lecture 5.1: Solomonoff Induction and Idealised Learning</td>
             <td>Aden Power</td>
-            <td class="has-text-centered has-text-grey">&mdash;</td>
+            <td class="has-text-centered"><a href="#note-5-1" class="note-jump"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>10:30&ndash;12:00</td>
             <td>Lecture 5.2: Abstractions and World Models</td>
             <td>Aden Power</td>
-            <td class="has-text-centered has-text-grey">&mdash;</td>
+            <td class="has-text-centered"><a href="#note-5-2" class="note-jump"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>13:00&ndash;14:00</td>
-            <td class="is-italic has-text-grey-dark">Lean Part II: Guided exercises continued</td>
+            <td class="is-italic">Lean Part II: Guided exercises continued</td>
             <td>Paul Lezeau</td>
             <td class="has-text-centered has-text-grey">&mdash;</td>
           </tr>
           <tr>
             <td>14:00&ndash;16:00</td>
-            <td class="is-italic has-text-grey-dark">Lean Part III: Semi-guided exercises</td>
+            <td class="is-italic">Lean Part III: Semi-guided exercises</td>
             <td>Paul Lezeau</td>
             <td class="has-text-centered has-text-grey">&mdash;</td>
           </tr>
@@ -283,25 +271,20 @@
 
     <br>
 
-    <!-- Week 2 -->
     <h3 class="title is-4">Week 2 &mdash; Deep Learning &amp; Singular Learning Theory (Nov 23&ndash;27)</h3>
     <div class="table-container">
       <table class="table is-striped is-hoverable is-fullwidth schedule-table">
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Session</th>
-            <th>Speaker</th>
+            <th>Date</th><th>Time</th><th>Session</th><th>Speaker</th>
             <th class="has-text-centered">Notes</th>
           </tr>
         </thead>
         <tbody>
-          <!-- Day 6 -->
           <tr>
             <td class="day-cell" rowspan="3"><strong>Mon 23</strong></td>
             <td>8:30&ndash;10:00</td>
-            <td class="is-italic has-text-grey-dark">Lean Part III: Semi-guided exercises continued</td>
+            <td class="is-italic">Lean Part III: Semi-guided exercises continued</td>
             <td>Paul Lezeau</td>
             <td class="has-text-centered has-text-grey">&mdash;</td>
           </tr>
@@ -309,27 +292,26 @@
             <td>10:30&ndash;11:30</td>
             <td>Mysteries of Deep Learning I</td>
             <td>Zach Furman</td>
-            <td class="has-text-centered has-text-grey">&mdash;</td>
+            <td class="has-text-centered"><a href="#note-dl-1" class="note-jump"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>13:00&ndash;15:00</td>
-            <td class="is-italic has-text-grey-dark">Mysteries of Deep Learning: Guided readings and discussion</td>
+            <td class="is-italic">Mysteries of Deep Learning: Guided readings and discussion</td>
             <td>Zach Furman</td>
             <td class="has-text-centered has-text-grey">&mdash;</td>
           </tr>
-          <!-- Day 7 -->
           <tr>
             <td class="day-cell" rowspan="4"><strong>Tue 24</strong></td>
             <td>8:30&ndash;9:30</td>
             <td>Mysteries of Deep Learning II</td>
             <td>Zach Furman</td>
-            <td class="has-text-centered has-text-grey">&mdash;</td>
+            <td class="has-text-centered"><a href="#note-dl-2" class="note-jump"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>10:00&ndash;11:30</td>
             <td>Singular Learning Theory (1/4)</td>
             <td>Jiayi Li</td>
-            <td class="has-text-centered has-text-grey">&mdash;</td>
+            <td class="has-text-centered"><a href="#note-slt-1" class="note-jump"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>13:00&ndash;14:00</td>
@@ -339,45 +321,42 @@
           </tr>
           <tr>
             <td>14:15&ndash;15:30</td>
-            <td class="is-italic has-text-grey-dark">Mathematical AI Safety Problem Lab</td>
+            <td class="is-italic">Mathematical AI Safety Problem Lab</td>
             <td>Marc Truter, Alessandro Tamai</td>
             <td class="has-text-centered has-text-grey">&mdash;</td>
           </tr>
-          <!-- Day 8 -->
           <tr>
             <td class="day-cell" rowspan="2"><strong>Wed 25</strong></td>
             <td>8:30&ndash;11:00</td>
             <td>Singular Learning Theory (2/4)</td>
             <td>Jiayi Li</td>
-            <td class="has-text-centered has-text-grey">&mdash;</td>
+            <td class="has-text-centered"><a href="#note-slt-2" class="note-jump"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>13:00&ndash;15:00</td>
-            <td class="is-italic has-text-grey-dark">Mathematical AI Safety Problem Lab</td>
+            <td class="is-italic">Mathematical AI Safety Problem Lab</td>
             <td>Marc Truter, Alessandro Tamai</td>
             <td class="has-text-centered has-text-grey">&mdash;</td>
           </tr>
-          <!-- Day 9 -->
           <tr>
             <td class="day-cell" rowspan="2"><strong>Thu 26</strong></td>
             <td>8:30&ndash;11:00</td>
             <td>Singular Learning Theory (3/4)</td>
             <td>Jiayi Li</td>
-            <td class="has-text-centered has-text-grey">&mdash;</td>
+            <td class="has-text-centered"><a href="#note-slt-3" class="note-jump"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>13:00&ndash;15:00</td>
-            <td class="is-italic has-text-grey-dark">Mathematical AI Safety Problem Lab</td>
+            <td class="is-italic">Mathematical AI Safety Problem Lab</td>
             <td>Marc Truter, Alessandro Tamai</td>
             <td class="has-text-centered has-text-grey">&mdash;</td>
           </tr>
-          <!-- Day 10 -->
           <tr>
             <td class="day-cell" rowspan="2"><strong>Fri 27</strong></td>
             <td>8:30&ndash;11:00</td>
             <td>Singular Learning Theory (4/4)</td>
             <td>Jiayi Li</td>
-            <td class="has-text-centered has-text-grey">&mdash;</td>
+            <td class="has-text-centered"><a href="#note-slt-4" class="note-jump"><i class="fas fa-arrow-down"></i></a></td>
           </tr>
           <tr>
             <td>13:00&ndash;15:00</td>
@@ -395,161 +374,386 @@
 <section class="section" id="notes">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Lecture Notes</h2>
-    <p class="subtitle is-6 has-text-grey">
-      Notes written in Markdown with LaTeX. Click <i class="fas fa-file-alt"></i> in the schedule above,
-      or browse the cards below. More will be added as the school progresses.
+    <p class="has-text-grey is-size-6 mb-5">
+      Click to expand. Notes are fetched live from the repository and rendered with LaTeX.
     </p>
-    <br>
 
-    <h3 class="title is-5">Week 1 &mdash; Foundations of AI Alignment</h3>
-    <div class="columns is-multiline">
+    <!-- ── Week 1 ─────────────────────────────────────────── -->
+    <h3 class="title is-5 mt-4">Week 1 &mdash; Foundations of AI Alignment</h3>
 
-      <div class="column is-half-tablet is-one-third-desktop">
-        <div class="card note-card">
-          <div class="card-content">
-            <p class="title is-6">Lecture 1.1</p>
-            <p class="subtitle is-7">Why is AI dangerous?</p>
-            <div class="tags">
-              <span class="tag is-info is-light">Alignment</span>
-              <span class="tag is-light">Nov 16</span>
+    <details class="box lecture-panel mb-3" id="note-1-1">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-info is-light mr-2">Lecture 1.1</span>
+                <strong>Why is AI dangerous?</strong>
+                <div class="is-size-7 has-text-grey mt-1">Mon Nov 16 &middot; Aden Power</div>
+              </div>
             </div>
-            <p class="is-size-7 has-text-grey">Aden Power</p>
           </div>
-          <footer class="card-footer">
-            <a href="https://github.com/CristopherErazo/sissa-ai-safety-school-2026/blob/main/lectures/notes/week1-day1-lecture1-why-ai-dangerous.md"
-               target="_blank" class="card-footer-item">
-              <span class="icon is-small"><i class="fas fa-external-link-alt"></i></span>
-              <span>&nbsp;View Notes</span>
-            </a>
-          </footer>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
         </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week1-day1-lecture1-why-ai-dangerous.md">
+        <p class="has-text-grey is-size-7"><i class="fas fa-spinner fa-spin"></i>&nbsp; Loading&hellip;</p>
       </div>
+    </details>
 
-      <div class="column is-half-tablet is-one-third-desktop">
-        <div class="card note-card">
-          <div class="card-content">
-            <p class="title is-6">Lecture 1.2</p>
-            <p class="subtitle is-7">AI Alignment as a Mathematical Problem</p>
-            <div class="tags">
-              <span class="tag is-info is-light">Alignment</span>
-              <span class="tag is-light">Nov 16</span>
+    <details class="box lecture-panel mb-3" id="note-1-2">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-info is-light mr-2">Lecture 1.2</span>
+                <strong>AI Alignment as a Mathematical and Scientific Problem</strong>
+                <div class="is-size-7 has-text-grey mt-1">Mon Nov 16 &middot; Aden Power</div>
+              </div>
             </div>
-            <p class="is-size-7 has-text-grey">Aden Power</p>
           </div>
-          <footer class="card-footer">
-            <a href="https://github.com/CristopherErazo/sissa-ai-safety-school-2026/blob/main/lectures/notes/week1-day1-lecture2-alignment-math-problem.md"
-               target="_blank" class="card-footer-item">
-              <span class="icon is-small"><i class="fas fa-external-link-alt"></i></span>
-              <span>&nbsp;View Notes</span>
-            </a>
-          </footer>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
         </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week1-day1-lecture2-alignment-math-problem.md">
+        <p class="has-text-grey is-size-7"><i class="fas fa-spinner fa-spin"></i>&nbsp; Loading&hellip;</p>
       </div>
+    </details>
 
-      <!-- Placeholder cards for remaining lectures -->
-      <div class="column is-half-tablet is-one-third-desktop">
-        <div class="card note-card is-disabled">
-          <div class="card-content">
-            <p class="title is-6 has-text-grey-light">Lectures 2.1&ndash;2.2</p>
-            <p class="subtitle is-7 has-text-grey-light">AI labs and misaligned AI control</p>
-            <div class="tags">
-              <span class="tag is-light has-text-grey-light">Nov 17</span>
+    <details class="box lecture-panel mb-3" id="note-2-1">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-info is-light mr-2">Lecture 2.1</span>
+                <strong>How do AI labs align their AIs and are they undoing the progress?</strong>
+                <div class="is-size-7 has-text-grey mt-1">Tue Nov 17 &middot; Aden Power</div>
+              </div>
             </div>
-            <p class="is-size-7 has-text-grey-light">Aden Power</p>
           </div>
-          <footer class="card-footer">
-            <span class="card-footer-item has-text-grey-light is-size-7">Coming soon</span>
-          </footer>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
         </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week1-day2-lecture3-ai-labs-alignment.md">
       </div>
+    </details>
 
-      <div class="column is-half-tablet is-one-third-desktop">
-        <div class="card note-card is-disabled">
-          <div class="card-content">
-            <p class="title is-6 has-text-grey-light">Lectures 3.1&ndash;3.2</p>
-            <p class="subtitle is-7 has-text-grey-light">Scalable oversight and debate</p>
-            <div class="tags">
-              <span class="tag is-light has-text-grey-light">Nov 18</span>
+    <details class="box lecture-panel mb-3" id="note-2-2">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-info is-light mr-2">Lecture 2.2</span>
+                <strong>Can we control misaligned AIs?</strong>
+                <div class="is-size-7 has-text-grey mt-1">Tue Nov 17 &middot; Aden Power</div>
+              </div>
             </div>
-            <p class="is-size-7 has-text-grey-light">Aden Power</p>
           </div>
-          <footer class="card-footer">
-            <span class="card-footer-item has-text-grey-light is-size-7">Coming soon</span>
-          </footer>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
         </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week1-day2-lecture4-control-misaligned-ai.md">
       </div>
+    </details>
 
-      <div class="column is-half-tablet is-one-third-desktop">
-        <div class="card note-card is-disabled">
-          <div class="card-content">
-            <p class="title is-6 has-text-grey-light">Lectures 4.1&ndash;4.2</p>
-            <p class="subtitle is-7 has-text-grey-light">Agent foundations &amp; multi-agent systems</p>
-            <div class="tags">
-              <span class="tag is-light has-text-grey-light">Nov 19</span>
+    <details class="box lecture-panel mb-3" id="note-3-1">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-info is-light mr-2">Lecture 3.1</span>
+                <strong>Introduction to scalable oversight and debate</strong>
+                <div class="is-size-7 has-text-grey mt-1">Wed Nov 18 &middot; Aden Power</div>
+              </div>
             </div>
-            <p class="is-size-7 has-text-grey-light">Aden Power</p>
           </div>
-          <footer class="card-footer">
-            <span class="card-footer-item has-text-grey-light is-size-7">Coming soon</span>
-          </footer>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
         </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week1-day3-lecture5-scalable-oversight-debate.md">
       </div>
+    </details>
 
-      <div class="column is-half-tablet is-one-third-desktop">
-        <div class="card note-card is-disabled">
-          <div class="card-content">
-            <p class="title is-6 has-text-grey-light">Lectures 5.1&ndash;5.2</p>
-            <p class="subtitle is-7 has-text-grey-light">Solomonoff Induction &amp; World Models</p>
-            <div class="tags">
-              <span class="tag is-light has-text-grey-light">Nov 20</span>
+    <details class="box lecture-panel mb-3" id="note-3-2">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-info is-light mr-2">Lecture 3.2</span>
+                <strong>Locally Consistent Arguments, Cross-Examination and obfuscated arguments</strong>
+                <div class="is-size-7 has-text-grey mt-1">Wed Nov 18 &middot; Aden Power</div>
+              </div>
             </div>
-            <p class="is-size-7 has-text-grey-light">Aden Power</p>
           </div>
-          <footer class="card-footer">
-            <span class="card-footer-item has-text-grey-light is-size-7">Coming soon</span>
-          </footer>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
         </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week1-day3-lecture6-locally-consistent-arguments.md">
       </div>
+    </details>
 
-    </div>
-
-    <br>
-    <h3 class="title is-5">Week 2 &mdash; Deep Learning &amp; Singular Learning Theory</h3>
-    <div class="columns is-multiline">
-
-      <div class="column is-half-tablet is-one-third-desktop">
-        <div class="card note-card is-disabled">
-          <div class="card-content">
-            <p class="title is-6 has-text-grey-light">Mysteries of Deep Learning I&ndash;II</p>
-            <p class="subtitle is-7 has-text-grey-light">Double descent, grokking, emergence</p>
-            <div class="tags">
-              <span class="tag is-warning is-light has-text-grey-light">Deep Learning</span>
+    <details class="box lecture-panel mb-3" id="note-4-1">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-info is-light mr-2">Lecture 4.1</span>
+                <strong>Introduction to agent foundations</strong>
+                <div class="is-size-7 has-text-grey mt-1">Thu Nov 19 &middot; Aden Power</div>
+              </div>
             </div>
-            <p class="is-size-7 has-text-grey-light">Zach Furman</p>
           </div>
-          <footer class="card-footer">
-            <span class="card-footer-item has-text-grey-light is-size-7">Coming soon</span>
-          </footer>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
         </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week1-day4-lecture7-agent-foundations.md">
       </div>
+    </details>
 
-      <div class="column is-half-tablet is-one-third-desktop">
-        <div class="card note-card is-disabled">
-          <div class="card-content">
-            <p class="title is-6 has-text-grey-light">Singular Learning Theory</p>
-            <p class="subtitle is-7 has-text-grey-light">RLCT, free energy, Bayesian model selection</p>
-            <div class="tags">
-              <span class="tag is-success is-light has-text-grey-light">SLT</span>
+    <details class="box lecture-panel mb-3" id="note-4-2">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-info is-light mr-2">Lecture 4.2</span>
+                <strong>Multi-agent systems and open source game theory</strong>
+                <div class="is-size-7 has-text-grey mt-1">Thu Nov 19 &middot; Aden Power</div>
+              </div>
             </div>
-            <p class="is-size-7 has-text-grey-light">Jiayi Li</p>
           </div>
-          <footer class="card-footer">
-            <span class="card-footer-item has-text-grey-light is-size-7">Coming soon</span>
-          </footer>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
         </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week1-day4-lecture8-multiagent-systems.md">
       </div>
+    </details>
 
-    </div>
+    <details class="box lecture-panel mb-3" id="note-5-1">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-info is-light mr-2">Lecture 5.1</span>
+                <strong>Solomonoff Induction and Idealised Learning</strong>
+                <div class="is-size-7 has-text-grey mt-1">Fri Nov 20 &middot; Aden Power</div>
+              </div>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
+        </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week1-day5-lecture9-solomonoff-induction.md">
+      </div>
+    </details>
+
+    <details class="box lecture-panel mb-3" id="note-5-2">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-info is-light mr-2">Lecture 5.2</span>
+                <strong>Abstractions and World Models</strong>
+                <div class="is-size-7 has-text-grey mt-1">Fri Nov 20 &middot; Aden Power</div>
+              </div>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
+        </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week1-day5-lecture10-abstractions-world-models.md">
+      </div>
+    </details>
+
+    <!-- ── Week 2 ─────────────────────────────────────────── -->
+    <h3 class="title is-5 mt-6">Week 2 &mdash; Deep Learning &amp; Singular Learning Theory</h3>
+
+    <details class="box lecture-panel mb-3" id="note-dl-1">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-warning is-light mr-2">Deep Learning I</span>
+                <strong>Mysteries of Deep Learning I</strong>
+                <div class="is-size-7 has-text-grey mt-1">Mon Nov 23 &middot; Zach Furman</div>
+              </div>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
+        </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week2-day1-mysteries-deep-learning-1.md">
+      </div>
+    </details>
+
+    <details class="box lecture-panel mb-3" id="note-dl-2">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-warning is-light mr-2">Deep Learning II</span>
+                <strong>Mysteries of Deep Learning II</strong>
+                <div class="is-size-7 has-text-grey mt-1">Tue Nov 24 &middot; Zach Furman</div>
+              </div>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
+        </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week2-day2-mysteries-deep-learning-2.md">
+      </div>
+    </details>
+
+    <details class="box lecture-panel mb-3" id="note-slt-1">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-success is-light mr-2">SLT 1/4</span>
+                <strong>Singular Learning Theory (1/4)</strong>
+                <div class="is-size-7 has-text-grey mt-1">Tue Nov 24 &middot; Jiayi Li</div>
+              </div>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
+        </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week2-day2-slt-1.md">
+      </div>
+    </details>
+
+    <details class="box lecture-panel mb-3" id="note-slt-2">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-success is-light mr-2">SLT 2/4</span>
+                <strong>Singular Learning Theory (2/4)</strong>
+                <div class="is-size-7 has-text-grey mt-1">Wed Nov 25 &middot; Jiayi Li</div>
+              </div>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
+        </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week2-day3-slt-2.md">
+      </div>
+    </details>
+
+    <details class="box lecture-panel mb-3" id="note-slt-3">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-success is-light mr-2">SLT 3/4</span>
+                <strong>Singular Learning Theory (3/4)</strong>
+                <div class="is-size-7 has-text-grey mt-1">Thu Nov 26 &middot; Jiayi Li</div>
+              </div>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
+        </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week2-day4-slt-3.md">
+      </div>
+    </details>
+
+    <details class="box lecture-panel mb-3" id="note-slt-4">
+      <summary class="lecture-summary">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <span class="tag is-success is-light mr-2">SLT 4/4</span>
+                <strong>Singular Learning Theory (4/4)</strong>
+                <div class="is-size-7 has-text-grey mt-1">Fri Nov 27 &middot; Jiayi Li</div>
+              </div>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item"><span class="icon has-text-grey chevron"><i class="fas fa-chevron-down"></i></span></div>
+          </div>
+        </div>
+      </summary>
+      <hr class="mt-3 mb-4">
+      <div class="lecture-content content"
+           data-src="https://raw.githubusercontent.com/CristopherErazo/sissa-ai-safety-school-2026/main/lectures/notes/week2-day5-slt-4.md">
+      </div>
+    </details>
+
   </div>
 </section>
 
@@ -562,54 +766,23 @@
         <div class="content">
           <h4>School</h4>
           <ul>
-            <li>
-              <a href="https://sites.google.com/view/mathaisafetysissa" target="_blank">
-                School website
-              </a> &mdash; official programme and speaker information
-            </li>
-            <li>
-              <a href="https://github.com/CristopherErazo/sissa-ai-safety-school-2026" target="_blank">
-                GitHub repository
-              </a> &mdash; notes, code, tutorials
-            </li>
+            <li><a href="https://sites.google.com/view/mathaisafetysissa" target="_blank">School website</a> &mdash; official programme and speaker information</li>
+            <li><a href="https://github.com/CristopherErazo/sissa-ai-safety-school-2026" target="_blank">GitHub repository</a> &mdash; notes, code, tutorials</li>
           </ul>
-
           <h4>Related Reading</h4>
           <ul>
-            <li>
-              Soares &amp; Fallenstein &mdash;
-              <em>Agent Foundations for Aligning Machine Intelligence with Human Interests</em>
-            </li>
-            <li>
-              Watanabe &mdash;
-              <em>Algebraic Geometry and Statistical Learning Theory</em>
-              (foundation of Singular Learning Theory)
-            </li>
-            <li>
-              Hutter &mdash;
-              <em>Universal Artificial Intelligence</em>
-              (Solomonoff Induction, AIXI)
-            </li>
-            <li>
-              Irving et al. &mdash;
-              <em>AI Safety via Debate</em>
-            </li>
+            <li>Soares &amp; Fallenstein &mdash; <em>Agent Foundations for Aligning Machine Intelligence with Human Interests</em></li>
+            <li>Watanabe &mdash; <em>Algebraic Geometry and Statistical Learning Theory</em></li>
+            <li>Hutter &mdash; <em>Universal Artificial Intelligence</em> (Solomonoff Induction, AIXI)</li>
+            <li>Irving et al. &mdash; <em>AI Safety via Debate</em></li>
           </ul>
-
           <h4>LaTeX in notes</h4>
           <p>
-            Notes use standard LaTeX math. Example: the partition function
-            $Z(\beta) = \int e^{-\beta H(w)} \varphi(w)\, dw$
-            and the Real Log-Canonical Threshold (RLCT) $\lambda$, which appears in
+            Inline math: <code>$f(x)$</code> &rarr; $f(x)$. &nbsp;
+            Display math:
           </p>
-          $$
-            F_n \approx nS(w_0) + \lambda \log n - (m-1)\log\log n + \ldots
-          $$
-          <p>
-            Inline math uses <code>$...$</code> and display math uses
-            <code>$$...$$</code> (rendered via MathJax on this page;
-            in Markdown notes they render in VS Code and Obsidian).
-          </p>
+          $$F_n \approx nS(w_0) + \lambda \log n - (m-1)\log\log n + \cdots$$
+          <p>Rendered via MathJax on this page; in <code>.md</code> files they render in VS Code and Obsidian.</p>
         </div>
       </div>
     </div>
@@ -621,23 +794,87 @@
   <div class="container">
     <div class="content has-text-centered">
       <p>
-        Page layout inspired by the
-        <a href="https://nerfies.github.io" target="_blank">Nerfies project page</a>.
-        Styled with
-        <a href="https://bulma.io" target="_blank">Bulma</a> (MIT License).
+        Page layout inspired by the <a href="https://nerfies.github.io" target="_blank">Nerfies project page</a>.
+        Styled with <a href="https://bulma.io" target="_blank">Bulma</a> (MIT License).
       </p>
     </div>
   </div>
 </footer>
 
 <script>
-  document.querySelectorAll('.navbar-burger').forEach(el => {
-    el.addEventListener('click', () => {
-      el.classList.toggle('is-active');
-      const target = document.getElementById(el.dataset.target);
-      if (target) target.classList.toggle('is-active');
-    });
+// ── Navbar burger ────────────────────────────────────────────
+document.querySelectorAll('.navbar-burger').forEach(el => {
+  el.addEventListener('click', () => {
+    el.classList.toggle('is-active');
+    const target = document.getElementById(el.dataset.target);
+    if (target) target.classList.toggle('is-active');
   });
+});
+
+// ── Math-safe Markdown renderer ──────────────────────────────
+// Protect $...$ and $$...$$ regions so marked.js doesn't mangle underscores inside math.
+function renderMarkdown(text) {
+  const saved = [];
+  // Block math $$...$$
+  let out = text.replace(/\$\$([\s\S]*?)\$\$/g, m => { saved.push(m); return '\x00M' + (saved.length - 1) + '\x00'; });
+  // Inline math $...$
+  out = out.replace(/(?<!\$)\$([^\$\n]{1,300}?)\$(?!\$)/g, m => { saved.push(m); return '\x00M' + (saved.length - 1) + '\x00'; });
+  // Run marked
+  out = marked.parse(out);
+  // Restore math
+  out = out.replace(/\x00M(\d+)\x00/g, (_, i) => saved[+i]);
+  return out;
+}
+
+// ── Lazy-load notes when a details panel is opened ───────────
+document.querySelectorAll('details.lecture-panel').forEach(panel => {
+  panel.addEventListener('toggle', async function () {
+    if (!this.open) return;
+    const div = this.querySelector('.lecture-content');
+    if (div.dataset.loaded) return;
+
+    const src = div.dataset.src;
+    if (!src) {
+      div.innerHTML = '<p class="has-text-grey is-size-7"><i class="fas fa-clock"></i>&nbsp; No notes yet.</p>';
+      div.dataset.loaded = 'true';
+      return;
+    }
+
+    div.innerHTML = '<p class="has-text-grey is-size-7"><i class="fas fa-spinner fa-spin"></i>&nbsp; Loading&hellip;</p>';
+
+    try {
+      const res = await fetch(src);
+      if (res.status === 404) {
+        div.innerHTML = '<p class="has-text-grey is-size-7"><i class="fas fa-clock"></i>&nbsp; No notes yet.</p>';
+        div.dataset.loaded = 'true';
+        return;
+      }
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const md = await res.text();
+      div.innerHTML = renderMarkdown(md);
+      div.querySelectorAll('pre code').forEach(b => hljs.highlightElement(b));
+      div.dataset.loaded = 'true';
+      await MathJax.typesetPromise([div]);
+    } catch (e) {
+      div.innerHTML = '<p class="has-text-warning is-size-7"><i class="fas fa-exclamation-triangle"></i>&nbsp; Could not load notes — are you viewing this offline? (' + e.message + ')</p>';
+    }
+  });
+});
+
+// ── Scroll-to and auto-open from schedule anchor links ───────
+// If the URL hash targets a note panel, open it on page load.
+function openPanelForHash(hash) {
+  if (!hash) return;
+  const panel = document.querySelector(hash);
+  if (panel && panel.tagName === 'DETAILS') panel.open = true;
+}
+openPanelForHash(location.hash);
+document.querySelectorAll('a.note-jump').forEach(a => {
+  a.addEventListener('click', () => {
+    const panel = document.querySelector(a.getAttribute('href'));
+    if (panel && panel.tagName === 'DETAILS') panel.open = true;
+  });
+});
 </script>
 
 </body>
