@@ -1,0 +1,296 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Claude//SISSA AI Safety School//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:SISSA Mathematical Foundations of AI Safety
+X-WR-TIMEZONE:Europe/Rome
+BEGIN:VEVENT
+UID:sissa-ai-01@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261116T083000Z
+DTEND:20261116T100000Z
+SUMMARY:Lecture 1.1: Why is AI dangerous? (Aden Power)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-02@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261116T103000Z
+DTEND:20261116T120000Z
+SUMMARY:Lecture 1.2: AI Alignment as a mathematical and scientific problem (Aden Power)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-03@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261116T130000Z
+DTEND:20261116T134500Z
+SUMMARY:Problem Lab - introduction (Se Eun Choi\, Marc Truter)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-04@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261117T083000Z
+DTEND:20261117T100000Z
+SUMMARY:Lecture 2.1: How do AI labs align their AIs and are they undoing the progress they've made? (Aden Power)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-05@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261117T103000Z
+DTEND:20261117T120000Z
+SUMMARY:Lecture 2.2: Can we control misaligned AIs? (Aden Power)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-06@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261117T130000Z
+DTEND:20261117T140000Z
+SUMMARY:AI discovery at scale in algebraic combinatorics (Eugenio Cainelli)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-07@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261117T141500Z
+DTEND:20261117T153000Z
+SUMMARY:Problem Lab: LLMs and transformers (Alessandro Tamai)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-08@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261118T083000Z
+DTEND:20261118T100000Z
+SUMMARY:Lecture 3.1: Introduction to scalable oversight and debate (Aden Power)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-09@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261118T103000Z
+DTEND:20261118T120000Z
+SUMMARY:Lecture 3.2: Locally Consistent Arguments\, Cross-Examination and obfuscated arguments (Aden Power)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-10@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261118T133000Z
+DTEND:20261118T143000Z
+SUMMARY:TBC session
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. To be confirmed.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-11@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261118T150000Z
+DTEND:20261118T160000Z
+SUMMARY:Mathematics and AI: past\, present and future (Massimiliano Esposito)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-12@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261119T083000Z
+DTEND:20261119T100000Z
+SUMMARY:Lecture 4.1: Introduction to agent foundations (Aden Power)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-13@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261119T103000Z
+DTEND:20261119T120000Z
+SUMMARY:Lecture 4.2: Multi-agent systems and open source game theory (Aden Power)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-14@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261119T130000Z
+DTEND:20261119T150000Z
+SUMMARY:Lean Part I: Getting started\, installation and basics (Paul Lezeau)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-15@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261119T150000Z
+DTEND:20261119T160000Z
+SUMMARY:Lean Part II: Guided exercises (Paul Lezeau)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-16@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261120T083000Z
+DTEND:20261120T100000Z
+SUMMARY:Lecture 5.1: Solomonoff Induction and Idealised Learning (Aden Power)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-17@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261120T103000Z
+DTEND:20261120T120000Z
+SUMMARY:Lecture 5.2: Abstractions and World Models (Aden Power)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-18@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261120T130000Z
+DTEND:20261120T140000Z
+SUMMARY:Lean Part II: Guided exercises continued (Paul Lezeau)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-19@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261120T140000Z
+DTEND:20261120T160000Z
+SUMMARY:Lean Part III: Semi-guided exercises (Paul Lezeau)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 1 - Foundations of AI Alignment. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-20@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261123T083000Z
+DTEND:20261123T100000Z
+SUMMARY:Lean Part III: Semi-guided exercises continued (Paul Lezeau)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 2 - Deep Learning and Singular Learning Theory. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-21@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261123T103000Z
+DTEND:20261123T113000Z
+SUMMARY:Mysteries of Deep Learning I (Zach Furman)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 2 - Deep Learning and Singular Learning Theory. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-22@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261123T130000Z
+DTEND:20261123T150000Z
+SUMMARY:Mysteries of Deep Learning: Guided readings and discussion (Zach Furman)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 2 - Deep Learning and Singular Learning Theory. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-23@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261124T083000Z
+DTEND:20261124T093000Z
+SUMMARY:Mysteries of Deep Learning II (Zach Furman)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 2 - Deep Learning and Singular Learning Theory. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-24@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261124T100000Z
+DTEND:20261124T113000Z
+SUMMARY:Singular Learning Theory (Jiayi Li)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 2 - Deep Learning and Singular Learning Theory. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-25@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261124T130000Z
+DTEND:20261124T140000Z
+SUMMARY:Special seminar - title TBC (Francesco Cagnetta\, TBC)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 2 - Deep Learning and Singular Learning Theory. Speaker and title to be confirmed.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-26@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261124T141500Z
+DTEND:20261124T153000Z
+SUMMARY:Mathematical AI Safety Problem Lab (Marc Truter\, Alessandro Tamai)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 2 - Deep Learning and Singular Learning Theory. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-27@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261125T083000Z
+DTEND:20261125T110000Z
+SUMMARY:Singular Learning Theory (Jiayi Li)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 2 - Deep Learning and Singular Learning Theory. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-28@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261125T130000Z
+DTEND:20261125T150000Z
+SUMMARY:Mathematical AI Safety Problem Lab (Marc Truter\, Alessandro Tamai)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 2 - Deep Learning and Singular Learning Theory. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-29@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261126T083000Z
+DTEND:20261126T110000Z
+SUMMARY:Singular Learning Theory (Jiayi Li)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 2 - Deep Learning and Singular Learning Theory. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-30@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261126T130000Z
+DTEND:20261126T150000Z
+SUMMARY:Mathematical AI Safety Problem Lab (Marc Truter\, Alessandro Tamai)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 2 - Deep Learning and Singular Learning Theory. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-31@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261127T083000Z
+DTEND:20261127T110000Z
+SUMMARY:Singular Learning Theory (Jiayi Li)
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 2 - Deep Learning and Singular Learning Theory. Provisional programme.
+END:VEVENT
+BEGIN:VEVENT
+UID:sissa-ai-32@claude
+DTSTAMP:20261112T180000Z
+DTSTART:20261127T130000Z
+DTEND:20261127T150000Z
+SUMMARY:Final reflections: group presentations and follow-up discussion
+LOCATION:Rooms 128-129\, SISSA\, Trieste
+DESCRIPTION:Week 2 - Deep Learning and Singular Learning Theory. Provisional programme.
+END:VEVENT
+END:VCALENDAR

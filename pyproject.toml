@@ -1,0 +1,16 @@
+[project]
+name = "sissa-ai-safety-school-2026"
+version = "0.1.0"
+description = "Notes, code, and resources from the SISSA School on Mathematical Foundations of AI Safety"
+requires-python = ">=3.11"
+dependencies = [
+    "jupyter>=1.1.1",
+    "numpy>=2.2.0",
+    "matplotlib>=3.9.0",
+    "scipy>=1.14.0",
+    "sympy>=1.13.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
